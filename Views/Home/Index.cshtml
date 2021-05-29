@@ -1,0 +1,67 @@
+﻿@model AeroLion.Models.LogInViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">About AeroLion.com:</h1>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <h1>Assignment Name</h1>
+        <b>Student Full Name:</b>Student Name<br>
+        <b>Student ID:</b> Student Id<br>
+        <b>Campus Location:</b> Campus<br>
+    </div>
+    <div class="row custom-style">
+        <div class="col-md-6">
+            <p>
+                AeroLion is India’s leading online travel booking brand providing range of choice for
+                hotels, flights, trains, bus and cars for travelers. Our core value differentiator
+                is the most trusted user experience, be it in terms of quickest search and booking,
+                fastest payments, settlement or refund processes. Through GoStays, our customers
+                enjoy standardised stay experience at certified hotel properties. With industry first
+                virtual travel booking currency GoCash and travel social network,
+                AeroLCash+ Rewards – AeroLion is the number one choice for new India on the move.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <form asp-action="Index" asp-controller="Flights">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input type="password" asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group custom-style">
+                    <input type="submit" asp-action="Login" asp-controller="Flights" value="LogIn" class="btn btn-primary" />
+                    <a class="btn btn-primary" asp-area="" asp-controller="Customers" asp-action="RegisterCustomer">RegisterCustomer</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+        .custom-style {
+            margin-top: 100px;
+        }
+
+        .item-left {
+            width: 50%;
+            text-align: justify;
+        }
+    </style>
+
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

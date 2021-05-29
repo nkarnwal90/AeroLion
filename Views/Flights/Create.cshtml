@@ -1,0 +1,69 @@
+﻿@model AeroLion.Models.Flights
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add New Flight Details</h1>
+
+<p>
+    <a asp-controller="Home" asp-action="Index" style="float: right;">Logout</a>
+</p>
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Flight_Id" class="control-label"></label>
+            <input asp-for="Flight_Id" class="form-control" />
+            <span asp-validation-for="Flight_Id" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="from_city" class="control-label"></label>
+            <input asp-for="from_city" class="form-control" />
+            <span asp-validation-for="from_city" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="to_city" class="control-label"></label>
+            <input asp-for="to_city" class="form-control" />
+            <span asp-validation-for="to_city" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="arrival_time" class="control-label"></label>
+            <input asp-for="arrival_time" class="form-control" />
+            <span asp-validation-for="arrival_time" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="depart_time" class="control-label"></label>
+            <input asp-for="depart_time" class="form-control" />
+            <span asp-validation-for="depart_time" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="fare" class="control-label"></label>
+            <input asp-for="fare" class="form-control" />
+            <span asp-validation-for="fare" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="max_seats" class="control-label"></label>
+            <input asp-for="max_seats" class="form-control" />
+            <span asp-validation-for="max_seats" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-controller="Flights" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

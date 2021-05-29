@@ -1,0 +1,78 @@
+﻿@model IEnumerable<AeroLion.Models.Flights>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Flights" asp-action="Create">Create New</a>
+    <a asp-controller="Home" asp-action="Index" style="float: right;">Logout</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.from_city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.to_city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.arrival_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.depart_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.max_seats)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flight_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.from_city)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.to_city)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.arrival_time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.depart_time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fare)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.max_seats)
+                    </td>
+                    <td>
+                        <a asp-controller="Flights" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-controller="Flights" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-controller="Flights" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

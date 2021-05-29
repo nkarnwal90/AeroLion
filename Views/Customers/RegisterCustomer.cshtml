@@ -1,0 +1,121 @@
+﻿@model AeroLion.Models.customers
+
+@{
+    ViewData["Title"] = "RegisterCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>RegisterCustomer</h1>
+
+<h4>customers</h4>
+<hr />
+
+<form asp-action="RegisterCustomer">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="full_name" class="control-label"></label>
+            <input asp-for="full_name" class="form-control" />
+            <span asp-validation-for="full_name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="user_name" class="control-label"></label>
+            <input asp-for="user_name" class="form-control" />
+            <span asp-validation-for="user_name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="password" class="control-label"></label>
+            <input type="password" asp-for="password" class="form-control" />
+            <span asp-validation-for="password" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="ConfirmPassword" class="control-label"></label>
+            <input type="password" asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="passport_no" class="control-label"></label>
+            <input asp-for="passport_no" class="form-control" />
+            <span asp-validation-for="passport_no" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="phone_no" class="control-label"></label>
+            <input asp-for="phone_no" class="form-control" />
+            <span asp-validation-for="phone_no" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="gender" class="control-label"></label>
+            <select asp-for="gender" class="custom-select">
+                <option value="">Choose Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+            <span asp-validation-for="gender" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="address" class="control-label"></label>
+            <input asp-for="address" class="form-control" />
+            <span asp-validation-for="address" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="country" class="control-label"></label>
+            <select asp-for="country" class="form-control">
+                <option value="">Country                                   </option>
+                <option value="1">Afghanistan                                   </option>
+                <option value="2">Argentina                                     </option>
+                <option value="3">Armenia                                       </option>
+                <option value="4">Australia                                     </option>
+                <option value="5">Bavaria*                                      </option>
+                <option value="6">Belarus                                       </option>
+                <option value="7">Brunei                                        </option>
+                <option value="8">Brunswick and Lüneburg                        </option>
+                <option value="9">Italy                                         </option>
+                <option value="10">Kuala Lumpur                                  </option>
+                <option value="11">Thailand                                      </option>
+                <option value="12">Timor-Leste                                   </option>
+                <option value="13">United Kingdom, The                           </option>
+                <option value="14">Uruguay                                       </option>
+                <option value="15">Uzbekistan                                    </option>
+                <option value="16">Vanuatu                                       </option>
+                <option value="17">Venezuela                                     </option>
+                <option value="18">Vietnam                                       </option>
+                <option value="19">Württemberg*                                  </option>
+                <option value="20">Yemen                                         </option>
+                <option value="21">Zambia                                        </option>
+                <option value="22">Zimbabwe                                      </option>
+            </select>
+            <span asp-validation-for="country" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="date_of_birth" class="control-label"></label>
+            <input asp-for="date_of_birth" class="form-control" />
+            <span asp-validation-for="date_of_birth" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="SingaporeIC" class="control-label"></label>
+            <input asp-for="SingaporeIC" class="form-control" />
+            <span asp-validation-for="SingaporeIC" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
